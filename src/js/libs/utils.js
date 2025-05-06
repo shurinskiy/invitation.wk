@@ -216,7 +216,7 @@ export const validate = (input) => {
 * @вызов:
 * 
 import { textareaResize } from "../../js/libs/utils";
-document.querySelectorAll('textarea').forEach(autoResizeTextarea);
+document.querySelectorAll('textarea').forEach(textareaResize);
 * 
 */
 

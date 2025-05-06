@@ -1,0 +1,54 @@
+@use 'lib' as *;
+
+.main {
+	$self: &;
+	flex-grow: 1;
+	background-image: 
+		url('./images/bg-top.webp'), 
+		url('./images/bg-bottom.webp'), 
+		url('./images/bg-middle-left.webp'),
+		url('./images/bg-middle-right.webp'),
+		url('./images/bg-bottom-left.webp'),
+		url('./images/bg-bottom-right.webp'),
+		url('./images/bg-paper.png');
+	background-repeat: 
+		no-repeat,
+		no-repeat,
+		no-repeat,
+		no-repeat,
+		no-repeat,
+		no-repeat,
+		repeat;
+	background-position: 
+		center top, 
+		center bottom, 
+		left calc(50% - 115px), 
+		right 50%,
+		left calc(80% - 35px),
+		right calc(85% - 70px),
+		center;
+	background-size: 
+		contain, 
+		contain, 
+		165px auto,
+		230px auto,
+		440px auto,
+		270px auto,
+		auto;
+
+	border: 2px solid #916720;
+	border-image: linear-gradient(90deg,
+		rgba(215, 170, 45, 1) 0%,
+		rgba(215, 170, 45, 1) 21%,
+		rgba(242, 226, 120, 1) 39%,
+		rgba(255, 251, 154, 1) 48%,
+		rgba(249, 238, 137, 1) 50%,
+		rgba(215, 170, 45, 1) 62%,
+		rgba(195, 151, 41, 1) 71%,
+		rgba(145, 103, 32, 1) 91%,
+		rgba(118, 78, 27, 1) 100%) 2;
+
+		@include media('<=xxs') {
+			border: none;
+		}
+	}

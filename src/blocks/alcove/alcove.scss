@@ -1,0 +1,30 @@
+@use 'lib' as *;
+
+.alcove {
+	$self: &;
+	margin: -140px 0 -150px;
+
+	&__image {
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&__body {
+		width: 340px;
+		max-width: calc(100% - 28px);
+		margin: 0 auto;
+		translate: 0 -237px;
+	}
+
+	&__title {
+		margin-bottom: 10px;
+	}
+
+	&__text {
+		font-size: 30px;
+		text-align: center;
+		line-height: 1.12;
+	}
+}

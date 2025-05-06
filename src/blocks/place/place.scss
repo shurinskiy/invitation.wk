@@ -1,0 +1,66 @@
+@use 'lib' as *;
+
+.place {
+	$self: &;
+	width: 340px;
+	max-width: calc(100% - 28px);
+	margin: 0 auto 95px;
+
+	&__title {
+		margin-bottom: 10px;
+	}
+
+	&__text {
+		margin-bottom: 18px;
+		text-align: center;
+		font-size: 30px;
+	}
+
+	&__plates {
+		display: flex;
+		justify-content: space-between;
+		max-width: 250px;
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	&__plate {
+		width: 100%;
+		max-width: 94px;
+	}
+
+	&__icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 8px;
+		aspect-ratio: 1;
+		flex-grow: 1;
+		z-index: 1;
+		border-radius: 1000px;
+		border: 1px solid transparent;
+		background: 
+			url('./images/bg-small-plate.webp') center / cover no-repeat content-box,
+			linear-gradient(-90deg,
+				rgba(215, 170, 45, 1) 0%,
+				rgba(215, 170, 45, 1) 21%,
+				rgb(219, 199, 64) 39%,
+				rgb(218, 212, 55) 48%,
+				rgb(216, 200, 55) 50%,
+				rgba(215, 170, 45, 1) 62%,
+				rgba(195, 151, 41, 1) 71%,
+				rgba(145, 103, 32, 1) 91%, 
+				rgba(118, 78, 27, 1) 100%) 
+			border-box;
+
+		img {
+			display: block;
+		}
+	}
+
+	&__name {
+		text-align: center;
+		white-space: nowrap;
+		font-size: 26px;
+	}
+}

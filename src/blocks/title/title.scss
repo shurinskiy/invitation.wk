@@ -1,0 +1,15 @@
+@use 'lib' as *;
+
+.title {
+	$self: &;
+	font-family: "GV", sans-serif;
+	font-size: 60px;
+	text-align: center;
+	padding-top: 3px;
+	line-height: 1.0;
+	background: linear-gradient(117deg, #263901 0%, #1E5501 100%);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	background-attachment: local; 
+	background-size: 100% 100%;
+}

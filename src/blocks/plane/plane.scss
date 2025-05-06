@@ -1,0 +1,114 @@
+@use 'lib' as *;
+
+.plane {
+	$self: &;
+	width: 380px;
+	max-width: calc(100% - 28px);
+	margin: 0 auto 95px;
+
+	&__title {
+		margin-bottom: 18px;
+	}
+
+	&__plates {
+		display: flex;
+		justify-content: center;
+		gap: 28px;
+		position: relative;
+
+		&::before {
+			display: block;
+			content: '';
+			position: absolute;
+			top: calc(50% + 30px);
+			left: 0;
+			height: 2px;
+			width: 100%;
+			background: linear-gradient(0deg,
+				rgba(215, 170, 45, 1) 0%,
+				rgba(215, 170, 45, 1) 21%,
+				rgb(219, 199, 64) 39%,
+				rgb(218, 212, 55) 48%,
+				rgb(216, 200, 55) 50%,
+				rgba(215, 170, 45, 1) 62%,
+				rgba(195, 151, 41, 1) 71%,
+				rgba(145, 103, 32, 1) 91%, 
+				rgba(118, 78, 27, 1) 100%) 
+			border-box;
+		}
+	}
+
+	&__plate {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		gap: 10px;
+
+		&::before {
+			display: block;
+			content: '';
+			width: 2px;
+			height: 26px;
+			background: linear-gradient(-90deg,
+				rgba(215, 170, 45, 1) 0%,
+				rgba(215, 170, 45, 1) 21%,
+				rgb(219, 199, 64) 39%,
+				rgb(218, 212, 55) 48%,
+				rgb(216, 200, 55) 50%,
+				rgba(215, 170, 45, 1) 62%,
+				rgba(195, 151, 41, 1) 71%,
+				rgba(145, 103, 32, 1) 91%, 
+				rgba(118, 78, 27, 1) 100%) 
+			border-box;
+		}
+	}
+
+	&__image {
+		order: -1;
+		width: 100%;
+		max-width: 152px;
+		aspect-ratio: 1;
+		overflow: hidden;
+		border-radius: 1000px;
+		border: 2px solid transparent;
+		background: 
+			url('./images/bg-small-plate.webp') center / cover no-repeat content-box,
+			linear-gradient(-90deg,
+				rgba(215, 170, 45, 1) 0%,
+				rgba(215, 170, 45, 1) 21%,
+				rgb(219, 199, 64) 39%,
+				rgb(218, 212, 55) 48%,
+				rgb(216, 200, 55) 50%,
+				rgba(215, 170, 45, 1) 62%,
+				rgba(195, 151, 41, 1) 71%,
+				rgba(145, 103, 32, 1) 91%, 
+				rgba(118, 78, 27, 1) 100%) 
+			border-box;
+
+		img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: cover;
+		}
+	}
+
+	&__text {
+		text-align: center;
+
+		span {
+			display: block;
+			line-height: 1.0;
+			
+			&:nth-child(1) {
+				font-size: 36px;
+				font-weight: 600;
+			}
+			
+			&:nth-child(2) {
+				font-size: 30px;
+				text-transform: uppercase;
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+@use 'lib' as *;
+
+.requied {
+	$self: &;
+
+	&::after {
+		display: inline-block;
+		content: '*';
+		color: #DA0004;
+		vertical-align: top;
+		line-height: 1.0;
+		font-size: 0.6em;
+	}
+}

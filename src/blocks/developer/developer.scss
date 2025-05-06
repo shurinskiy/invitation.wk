@@ -1,0 +1,11 @@
+@use 'lib' as *;
+
+.developer {
+	$self: &;
+	display: block;
+	font-size: 20px;
+	text-align: center;
+	padding-bottom: 20px;
+	color: #000;
+	text-decoration: none;
+}

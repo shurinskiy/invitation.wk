@@ -23,27 +23,33 @@
 }
 
 // Include breakpoints badge
-body { @include screen-media(); }
+// body { @include screen-media(); }
 
 
-// @include font-face("Montserrat-ExtraLight", "MR", 200);
-// @include font-face("Montserrat-ExtraBold", "MR", 800);
-// @include font-face("Montserrat-SemiBold", "MR", 600);
-// @include font-face("Montserrat-Regular", "MR", 400);
-// @include font-face("Montserrat-Medium", "MR", 500);
-// @include font-face("Montserrat-Light", "MR", 300);
-// @include font-face("Montserrat-Black", "MR", 900);
-// @include font-face("Montserrat-Bold", "MR", 700);
-// @include font-face("Montserrat-Thin", "MR", 100);
+@include font-face("AlumniSans-ExtraLight", "AL", 200);
+@include font-face("AlumniSans-ExtraBold", "AL", 800);
+@include font-face("AlumniSans-SemiBold", "AL", 600);
+@include font-face("AlumniSans-Regular", "AL", 400);
+@include font-face("AlumniSans-Medium", "AL", 500);
+@include font-face("AlumniSans-Light", "AL", 300);
+@include font-face("AlumniSans-Black", "AL", 900);
+@include font-face("AlumniSans-Bold", "AL", 700);
+@include font-face("AlumniSans-Thin", "AL", 100);
+
+@include font-face("DavidLibre-Bold", "DL", 700);
+@include font-face("DavidLibre-Medium", "DL", 500);
+@include font-face("DavidLibre-Regular", "DL", 400);
+
+@include font-face("Dorian-Regular", "DR", 400);
+@include font-face("GreatVibes-Regular", "GV", 400);
 
 body, html {
 	// scrollbar-gutter: stable;
 	// scroll-behavior: smooth;	
 	box-sizing: border-box;
-	background-color: var(--background);
 	font-size: var(--size);
 	color: var(--text);
-	font-family: sans-serif;
+	font-family: "AL", sans-serif;
 	line-height: 1.2;
 	font-weight: 400;
 	min-height: 100vh;
@@ -51,39 +57,38 @@ body, html {
 	flex-flow: column nowrap;
 }
 
-.footer {
-	flex: 0 0 auto; 
-	margin-top: auto; 
+body {
+	background-color: #fff;
+	background-image: 
+		url('./images/bg-desktop-top-left.webp'), 
+		url('./images/bg-desktop-top-right.webp'), 
+		url('./images/bg-desktop-bottom-left.webp'), 
+		url('./images/bg-desktop-bottom-right.webp'), 
+		url('./images/bg-paper.png');
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+	background-position: 
+		left top -10px, 
+		right top -10px, 
+		left bottom,
+		right bottom,
+		center;
+	background-size: 
+		620px auto, 
+		590px auto, 
+		610px auto, 
+		590px auto, 
+		auto;
 }
 
-.sprite {
+/* .sprite {
 	display: none;
-}
+} */
 
 p { margin-bottom: 10px; }
 strong { font-weight: bold; }
 em { font-style: italic; }
 
-
-.mb1 { margin-bottom: 100px; }
-.mb2 { margin-bottom: 80px; }
-.mb3 { margin-bottom: 60px; }
-.mb4 { margin-bottom: 40px; }
-.mb5 { margin-bottom: 30px; }
-
-
-@include media('<=md') {
-	.mb1 { margin-bottom: 80px; }
-	.mb2 { margin-bottom: 60px; }
-	.mb3 { margin-bottom: 40px; }
-	.mb4 { margin-bottom: 30px; }
-	.mb5 { margin-bottom: 20px; }
-}
-
-@include media('<=xxs') {
-	.mb1 { margin-bottom: 60px; }
-	.mb2 { margin-bottom: 40px; }
-	.mb3 { margin-bottom: 30px; }
-	.mb4 { margin-bottom: 20px; }
-	.mb5 { margin-bottom: 15px; }
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
 }

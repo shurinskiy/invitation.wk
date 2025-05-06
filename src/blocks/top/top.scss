@@ -1,0 +1,84 @@
+@use 'lib' as *;
+
+.top {
+	$self: &;
+	padding-top: 80px;
+
+	&__image {
+		max-width: calc(100% - 50px);
+		margin: 0 auto 18px;
+		
+		img {
+			display: block;
+		}
+	}
+	
+	&__date {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 40px;
+		letter-spacing: 0.02em;
+		width: 346px;
+		max-width: calc(100% - 28px);
+		margin: 0 auto;
+		position: relative;
+
+		&::before, &::after {
+			display: block;
+			content: '';
+			height: 1px;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			background: linear-gradient(115deg, #6E8004, #C17E00);
+		}
+
+		&::before {
+			top: 10px;
+		}
+
+		&::after {
+			bottom: 10px;
+		}
+
+		span {
+			text-transform: uppercase;
+			text-align: center;
+			flex-basis: calc(40% - 2px);
+			font-weight: 500;
+			background: linear-gradient(115deg, #6E8004, #C17E00);
+			-webkit-text-fill-color: transparent;
+			-webkit-background-clip: text;
+		}
+	}
+
+	&__day {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		aspect-ratio: 1;
+		flex-grow: 1;
+		z-index: 1;
+		border-radius: 1000px;
+		border: 1px solid transparent;
+		background: 
+			url('./images/bg-day-plate.webp') center / cover no-repeat content-box,
+			linear-gradient(-90deg,
+				rgba(215, 170, 45, 1) 0%,
+				rgba(215, 170, 45, 1) 21%,
+				rgb(219, 199, 64) 39%,
+				rgb(218, 212, 55) 48%,
+				rgb(216, 200, 55) 50%,
+				rgba(215, 170, 45, 1) 62%,
+				rgba(195, 151, 41, 1) 71%,
+				rgba(145, 103, 32, 1) 91%, 
+				rgba(118, 78, 27, 1) 100%) 
+			border-box;
+
+		img {
+			display: block;
+			width: calc(100% - 28px);
+		}
+	}
+}
