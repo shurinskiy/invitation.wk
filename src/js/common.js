@@ -15,17 +15,26 @@ new ResizeObserver(() => {
 
 textareaResize(document.querySelector('.form__textarea'));
 
-document.querySelectorAll('.form__counter').forEach(control => {
-	const buttons = control.querySelectorAll('button');
-	const input = control.querySelector('input');
+const counter = document.querySelector('.form__counter input');
+const checks = document.querySelectorAll('input.form__check');
+	
+counter.parentNode.addEventListener('click', e => {
+	e.preventDefault();
+	
+	if (counter.disabled) return;
+	const buttons = e.currentTarget.querySelectorAll('button');
 
-	control.addEventListener('click', e => {
-		e.preventDefault();
-
-		if(e.target === buttons[1]) {
-			++input.value;
-		} else if (e.target === buttons[0]) {
-			(input.value > 0) && --input.value;
-		}
-	});
+	if(e.target === buttons[1]) {
+		++counter.value;
+	} else if (e.target === buttons[0]) {
+		(counter.value > 1) && --counter.value;
+	}
 });
+
+checks.forEach(input => input.addEventListener('change', e => {
+	const isReject = e.currentTarget == checks[1];
+	
+	counter.disabled = isReject;
+	counter.value = + !isReject;
+
+}));

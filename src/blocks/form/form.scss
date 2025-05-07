@@ -27,7 +27,7 @@
 		}
 	}
 
-	&__checkbox {
+	&__check {
 		@extend %reset-input;
 		display: inline-flex;
 		vertical-align: middle;
@@ -100,6 +100,13 @@
 			font-size: 30px;
 			text-align: center;
 			line-height: 1;
+		}
+
+		input {
+
+			&:disabled {
+				color: #aaa;
+			}
 		}
 
 		button {
