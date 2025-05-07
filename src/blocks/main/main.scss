@@ -10,7 +10,7 @@
 		url('./images/bg-middle-right.webp'),
 		url('./images/bg-bottom-left.webp'),
 		url('./images/bg-bottom-right.webp'),
-		url('./images/bg-paper.png');
+		url('./images/bg-paper-light.png');
 	background-repeat: 
 		no-repeat,
 		no-repeat,
@@ -48,7 +48,30 @@
 		rgba(145, 103, 32, 1) 91%,
 		rgba(118, 78, 27, 1) 100%) 2;
 
+	@include media('<=xxs') {
+		border: none;
+	}
+
+	&__down {
+		display: flex;
+		justify-content: center;
+		animation: fadeIn 0.5s;
+		position: fixed;
+		bottom: 40px;
+		right: 40px;
+		width: 40px;
+		
 		@include media('<=xxs') {
-			border: none;
+			right: 10px;
+		}
+		
+		&.hidden {
+			display: none;
+		}
+		
+		img {
+			display: block;
+			animation: bounce 4s ease-in-out infinite;
 		}
 	}
+}

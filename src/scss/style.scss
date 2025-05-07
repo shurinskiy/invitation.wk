@@ -45,7 +45,7 @@
 
 body, html {
 	// scrollbar-gutter: stable;
-	// scroll-behavior: smooth;	
+	scroll-behavior: smooth;
 	box-sizing: border-box;
 	font-size: var(--size);
 	color: var(--text);
@@ -62,19 +62,32 @@ body {
 	background-image: 
 		url('./images/bg-desktop-top-left.webp'), 
 		url('./images/bg-desktop-top-right.webp'), 
+		url('./images/bg-desktop-middle-left.webp'), 
+		url('./images/bg-desktop-middle-right.webp'), 
 		url('./images/bg-desktop-bottom-left.webp'), 
 		url('./images/bg-desktop-bottom-right.webp'), 
-		url('./images/bg-paper.png');
-	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+		url('./images/bg-paper-light.png');
+	background-repeat: 
+		no-repeat, 
+		no-repeat, 
+		no-repeat, 
+		no-repeat, 
+		no-repeat, 
+		no-repeat, 
+		repeat;
 	background-position: 
 		left top -10px, 
 		right top -10px, 
+		left calc(50% - 230px),
+		right calc(50% + 150px),
 		left bottom,
 		right bottom,
 		center;
 	background-size: 
 		620px auto, 
 		590px auto, 
+		680px auto, 
+		540px auto, 
 		610px auto, 
 		590px auto, 
 		auto;
@@ -91,4 +104,11 @@ em { font-style: italic; }
 @keyframes fadeIn {
 	from { opacity: 0; }
 	to { opacity: 1; }
+}
+
+@keyframes bounce {
+	0%, 10%, 20%, 30%, 40% { transform: translateY(0); }
+	5%, 25% { transform: translateY(-5px); }
+	15%, 35% { transform: translateY(-5px); }
+	100% { transform: translateY(0); }
 }

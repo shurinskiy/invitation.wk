@@ -1,18 +1,18 @@
-import { textareaResize } from "./libs/utils";
+import { textareaResize, throttle } from "./libs/utils";
 import "./polyfills.js";
 import "./blocks.js";
 
 /* Тут можно писать код общий для всего проекта и требующий единого пространства имен */
 
-new ResizeObserver(() => {
-	const root = document.documentElement;
-	const vh = root.clientHeight / 100;
-	// const vw = root.clientWidth / 100;
+function updateVH() {
+	const vh = (window.visualViewport?.height || window.innerHeight) * 0.01;
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
 
-	root.style.setProperty('--vh', `${vh}px`);
-	// root.style.setProperty('--vw', `${vw}px`);
-}).observe(document.documentElement);
+window.addEventListener('resize', throttle(updateVH, 200), { passive: true });
+updateVH();
 
+// авторесайз формы, по мере заполнения
 textareaResize(document.querySelector('.form__textarea'));
 
 const counter = document.querySelector('.form__counter input');
@@ -36,5 +36,4 @@ checks.forEach(input => input.addEventListener('change', e => {
 	
 	counter.disabled = isReject;
 	counter.value = + !isReject;
-
 }));
