@@ -90,14 +90,14 @@
 		right: 150px;
 		
 		@include media('<=md') {
-			--size: 32px;
-			--offset: 2px;
-			--opened: 140px;
+			--size: 44px;
+			--offset: 3px;
+			--opened: 180px;
 			--border-width: 1px;
 			
 			left: 8px;
 			right: auto;
-			bottom: calc(100% - 700px);
+			bottom: calc(100% - 650px);
 		}
 	}
 }

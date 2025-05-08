@@ -10,15 +10,10 @@
 	
 	&:hover {
 		height: var(--opened, 220px);
-		
-		#{$self}__item {
-			// pointer-events: all;
-		}
 	}
 	
 	&__item {
 		position: absolute;
-		// pointer-events: none;
 		left: 50%;
 		translate: -50% 0;
 		display: block;
