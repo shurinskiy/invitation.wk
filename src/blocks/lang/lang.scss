@@ -1,0 +1,71 @@
+@use 'lib' as *;
+
+.lang {
+	$self: &;
+	width: var(--size, 68px);
+	height: var(--size, 68px);
+	border: var(--border-width, 2px) solid #a98241;
+	transition: height 0.3s;
+	border-radius: 100px;
+
+	&:hover {
+		height: var(--opened, 220px);
+	}
+	
+	&__item {
+		position: absolute;
+		left: 50%;
+		translate: -50% 0;
+		display: block;
+		overflow: hidden;
+		aspect-ratio: 1;
+		width: calc(100% - var(--offset, 5px) * 2);
+		border-radius: 100px;
+		border: var(--border-width, 2px) solid transparent;
+		background: 
+		linear-gradient(white, white) padding-box,
+		linear-gradient(-90deg,
+				rgba(215, 170, 45, 1) 0%,
+				rgba(215, 170, 45, 1) 21%,
+				rgb(219, 199, 64) 39%,
+				rgb(218, 212, 55) 48%,
+				rgb(216, 200, 55) 50%,
+				rgba(215, 170, 45, 1) 62%,
+				rgba(195, 151, 41, 1) 71%,
+				rgba(145, 103, 32, 1) 91%, 
+				rgba(118, 78, 27, 1) 100%) 
+		border-box;
+		
+		&:nth-child(1) {
+			bottom: auto;
+			top: var(--offset, 5px);
+			
+			img {
+				filter: saturate(0) brightness(2);
+			}
+		}
+		
+		&:nth-child(2) {
+			translate: -50% 50%;
+			bottom: 50%;
+			
+			img {
+				filter: saturate(0) brightness(1.8);
+			}
+		}
+
+		&:nth-child(3) {
+			bottom: var(--offset, 5px);
+			pointer-events: none;
+		}
+		
+		&:hover img {
+			filter: none;
+		}
+		
+		img {
+			transition: filter 0.3s;
+			display: block;
+		}
+	}
+}

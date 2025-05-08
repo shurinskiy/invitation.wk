@@ -48,6 +48,10 @@
 		rgba(145, 103, 32, 1) 91%,
 		rgba(118, 78, 27, 1) 100%) 2;
 
+	@include media('<=md') {
+		position: relative;
+	}
+
 	@include media('<=xxs') {
 		border: none;
 	}
@@ -72,6 +76,28 @@
 		img {
 			display: block;
 			animation: bounce 4s ease-in-out infinite;
+		}
+	}
+
+	&__lang {
+		--size: 68px;
+		--offset: 5px;
+		--opened: 220px;
+		--border-width: 2px;
+		
+		position: absolute;
+		bottom: calc(100% - 250px);
+		right: 150px;
+		
+		@include media('<=md') {
+			--size: 32px;
+			--offset: 2px;
+			--opened: 140px;
+			--border-width: 1px;
+			
+			left: 8px;
+			right: auto;
+			bottom: calc(100% - 750px);
 		}
 	}
 }
