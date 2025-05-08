@@ -25,7 +25,6 @@
 // Include breakpoints badge
 // body { @include screen-media(); }
 
-
 @include font-face("AlumniSans-ExtraLight", "AL", 200);
 @include font-face("AlumniSans-ExtraBold", "AL", 800);
 @include font-face("AlumniSans-SemiBold", "AL", 600);
@@ -58,39 +57,62 @@ body, html {
 }
 
 body {
-	background-color: #fff;
-	background-image: 
-		url('./images/bg-desktop-top-left.webp'), 
-		url('./images/bg-desktop-top-right.webp'), 
-		url('./images/bg-desktop-middle-left.webp'), 
-		url('./images/bg-desktop-middle-right.webp'), 
-		url('./images/bg-desktop-bottom-left.webp'), 
-		url('./images/bg-desktop-bottom-right.webp'), 
-		url('./images/bg-paper-light.png');
-	background-repeat: 
-		no-repeat, 
-		no-repeat, 
-		no-repeat, 
-		no-repeat, 
-		no-repeat, 
-		no-repeat, 
-		repeat;
-	background-position: 
-		left top -10px, 
-		right top -10px, 
-		left calc(50% - 230px),
-		right calc(50% + 150px),
-		left bottom,
-		right bottom,
-		center;
-	background-size: 
-		620px auto, 
-		590px auto, 
-		680px auto, 
-		540px auto, 
-		610px auto, 
-		590px auto, 
-		auto;
+
+	&#home {
+		background-color: #fff;
+		background-image: 
+			url('./images/bg-desktop-top-left.webp'), 
+			url('./images/bg-desktop-top-right.webp'), 
+			url('./images/bg-desktop-middle-left.webp'), 
+			url('./images/bg-desktop-middle-right.webp'), 
+			url('./images/bg-desktop-bottom-left.webp'), 
+			url('./images/bg-desktop-bottom-right.webp'), 
+			url('./images/bg-paper-light.png');
+		background-repeat: 
+			no-repeat, 
+			no-repeat, 
+			no-repeat, 
+			no-repeat, 
+			no-repeat, 
+			no-repeat, 
+			repeat;
+		background-position: 
+			left top -10px, 
+			right top -10px, 
+			left calc(50% - 230px),
+			right calc(50% + 150px),
+			left bottom,
+			right bottom,
+			center;
+		background-size: 
+			620px auto, 
+			590px auto, 
+			680px auto, 
+			540px auto, 
+			610px auto, 
+			590px auto, 
+			auto;
+	}
+
+	&#success {
+		background-color: #fff;
+		background-image: 
+			url('./images/bg-success-left.webp'), 
+			url('./images/bg-success-right.webp'), 
+			url('./images/bg-paper-light.png');
+		background-repeat: 
+			no-repeat, 
+			no-repeat, 
+			repeat;
+		background-position: 
+			left center,
+			right center,
+			center;
+		background-size: 
+			auto 100%,
+			auto 100%,
+			auto;
+	}
 }
 
 /* .sprite {

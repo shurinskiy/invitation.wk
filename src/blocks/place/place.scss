@@ -2,9 +2,6 @@
 
 .place {
 	$self: &;
-	width: 340px;
-	max-width: calc(100% - 28px);
-	margin: 0 auto 95px;
 
 	&__title {
 		margin-bottom: 10px;

@@ -3,13 +3,20 @@
 .lang {
 	$self: &;
 	width: var(--size, 68px);
-	height: var(--size, 68px);
-	border: var(--border-width, 2px) solid #a98241;
-	transition: height 0.3s;
-	border-radius: 100px;
 	
-	&:hover {
-		height: var(--opened, 220px);
+	&__inner {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: var(--size, 68px);
+		border: var(--border-width, 2px) solid #a98241;
+		transition: height 0.3s;
+		border-radius: 100px;
+		
+		&:hover {
+			height: var(--opened, 220px);
+		}
 	}
 	
 	&__item {
@@ -23,8 +30,8 @@
 		border-radius: 100px;
 		border: var(--border-width, 2px) solid transparent;
 		background: 
-		linear-gradient(white, white) padding-box,
-		linear-gradient(-90deg,
+			linear-gradient(white, white) padding-box,
+			linear-gradient(-90deg,
 				rgba(215, 170, 45, 1) 0%,
 				rgba(215, 170, 45, 1) 21%,
 				rgb(219, 199, 64) 39%,
@@ -34,14 +41,16 @@
 				rgba(195, 151, 41, 1) 71%,
 				rgba(145, 103, 32, 1) 91%, 
 				rgba(118, 78, 27, 1) 100%) 
-		border-box;
+			border-box;
 		
 		&:nth-child(1) {
 			bottom: auto;
 			top: var(--offset, 5px);
 			
 			img {
-				filter: saturate(0) brightness(2);
+				@include media('>md') {
+					filter: saturate(0) brightness(1.8);
+				}
 			}
 		}
 		
@@ -50,7 +59,9 @@
 			bottom: 50%;
 			
 			img {
-				filter: saturate(0) brightness(1.8);
+				@include media('>md') {
+					filter: saturate(0) brightness(1.8);
+				}
 			}
 		}
 

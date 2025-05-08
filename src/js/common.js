@@ -18,7 +18,7 @@ textareaResize(document.querySelector('.form__textarea'));
 const counter = document.querySelector('.form__counter input');
 const checks = document.querySelectorAll('input.form__check');
 	
-counter.parentNode.addEventListener('click', e => {
+counter && counter.parentNode.addEventListener('click', e => {
 	e.preventDefault();
 	
 	if (counter.disabled) return;
@@ -31,7 +31,7 @@ counter.parentNode.addEventListener('click', e => {
 	}
 });
 
-checks.forEach(input => input.addEventListener('change', e => {
+checks && checks.forEach(input => input.addEventListener('change', e => {
 	const isReject = e.currentTarget == checks[1];
 	
 	counter.disabled = isReject;

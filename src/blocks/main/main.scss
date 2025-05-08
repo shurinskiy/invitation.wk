@@ -86,8 +86,9 @@
 		--border-width: 2px;
 		
 		position: absolute;
-		bottom: calc(100% - 250px);
-		right: 150px;
+		z-index: 10;
+		right: 26px;
+		top: 250px;
 		
 		@include media('<=md') {
 			--size: 44px;
@@ -97,7 +98,37 @@
 			
 			left: 8px;
 			right: auto;
-			bottom: calc(100% - 650px);
+			top: min(calc(var(--vh, 1vh) * 100 - 45px), 700px);
 		}
+	}
+
+	&__top {
+
+	}
+	
+	&__alcove {
+		margin: -140px 0 -150px;
+	}
+	
+	&__place {
+		width: 340px;
+		max-width: calc(100% - 28px);
+		margin: 0 auto 95px;
+	}
+	
+	&__plane {
+		width: 380px;
+		max-width: calc(100% - 28px);
+		margin: 0 auto 75px;
+	}
+	
+	&__worksheet {
+		width: 344px;
+		max-width: calc(100% - 28px);
+		margin: 0 auto 300px;
+	}
+	
+	&__developer {
+
 	}
 }

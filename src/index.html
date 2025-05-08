@@ -4,17 +4,19 @@
 <main class="main container">
 	<a class="main__down" href="#worksheet"><img src="./images/down-icon.svg" alt=""></a>
 	<div class="main__lang lang">
-		<a class="lang__item" href="./">
-			<img src="./images/flag-ru.webp" alt="">
-		</a>
-		<a class="lang__item" href="./">
-			<img src="./images/flag-he.webp" alt="">
-		</a>
-		<span class="lang__item">
-			<img src="./images/flag-us.webp" alt="">
-		</span>
+		<div class="lang__inner">
+			<a class="lang__item" href="./">
+				<img src="./images/flag-ru.webp" alt="">
+			</a>
+			<a class="lang__item" href="./">
+				<img src="./images/flag-he.webp" alt="">
+			</a>
+			<span class="lang__item">
+				<img src="./images/flag-us.webp" alt="">
+			</span>
+		</div>
 	</div>
-	<div class="top">
+	<div class="main__top top">
 		<div class="top__image">
 			<img src="./images/title-image-ru.webp" alt="">
 		</div>
@@ -26,7 +28,7 @@
 			<span>Августа</span>
 		</div>
 	</div>
-	<div class="alcove">
+	<div class="main__alcove alcove">
 		<div class="alcove__image">
 			<img src="./images/alcove-image.webp" alt="">
 		</div>
@@ -35,7 +37,7 @@
 			<div class="alcove__text">Приглашаем вас на торжественный вечер, посвященный нашему бракосочетанию. Будем рады видеть вас в среду 20.08.2025</div>
 		</div>
 	</div>
-	<div class="place">
+	<div class="main__place place">
 		<h2 class="place__title title">Место<br> проведения</h2>
 		<div class="place__text">Зал торжеств WIN<br> HaTelem Street 1, Emek Hefer</div>
 		<div class="place__plates">
@@ -49,12 +51,12 @@
 			</div>
 		</div>
 	</div>
-	<div class="plane">
+	<div class="main__plane plane">
 		<h2 class="plane__title title">План дня</h2>
 		<div class="plane__plates">
 			<div class="plane__plate">
 				<div class="plane__image">
-					<img src="./images/plan-image-1.webp" alt="">
+					<img src="./images/plan-image-2.webp" alt="">
 				</div>
 				<div class="plane__text">
 					<span>19:00</span>
@@ -63,7 +65,7 @@
 			</div>
 			<div class="plane__plate">
 				<div class="plane__image">
-					<img src="./images/plan-image-2.webp" alt="">
+					<img src="./images/plan-image-1.webp" alt="">
 				</div>
 				<div class="plane__text">
 					<span>20:00</span>
@@ -72,10 +74,10 @@
 			</div>
 		</div>
 	</div>
-	<div class="worksheet" id="worksheet">
+	<div class="main__worksheet worksheet" id="worksheet">
 		<h2 class="worksheet__title title">Анкета</h2>
 		<div class="worksheet__text">Ответьте, пожалуйста, на пару вопросов, которые помогут нам в организации свадьбы</div>
-		<form class="worksheet__form form" action="./">
+		<form class="worksheet__form form" action="./success.html">
 			<div class="form__come requied">Планируете ли вы присутствовать?</div>
 			<label class="form__row form__row_willcome">
 				<input class="form__check" type="radio" name="come" value="да, приду">
@@ -85,7 +87,7 @@
 				<span>Сколько Вас?</span>
 				<div class="form__counter">
 					<button></button>
-					<input type="text" value="0" readonly>
+					<input type="text" value="0" readonly disabled>
 					<button></button>
 				</div>
 			</div>
@@ -100,7 +102,7 @@
 			<button class="form__submit"><span>Отправить</span></button>
 		</form>
 	</div>
-	<a class="developer" href="./">&copy; Made with &#x2661; by WWdiv Studio</a>
+	<a class="main__developer developer" href="./">&copy; Made with &#x2661; by WWdiv Studio</a>
 </main>
 
 @@include("_bottom.html")

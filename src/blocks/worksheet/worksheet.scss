@@ -2,9 +2,6 @@
 
 .worksheet {
 	$self: &;
-	width: 344px;
-	max-width: calc(100% - 28px);
-	margin: 0 auto 300px;
 	padding-top: 20px;
 
 	&__title {
