@@ -7,13 +7,18 @@
 	border: var(--border-width, 2px) solid #a98241;
 	transition: height 0.3s;
 	border-radius: 100px;
-
+	
 	&:hover {
 		height: var(--opened, 220px);
+		
+		#{$self}__item {
+			pointer-events: all;
+		}
 	}
 	
 	&__item {
 		position: absolute;
+		pointer-events: none;
 		left: 50%;
 		translate: -50% 0;
 		display: block;
@@ -56,7 +61,6 @@
 
 		&:nth-child(3) {
 			bottom: var(--offset, 5px);
-			pointer-events: none;
 		}
 		
 		&:hover img {
