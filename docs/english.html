@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="style.css?v=1746869773860">
+    <link rel="stylesheet" href="style.css?v=1746872693434">
     <!-- Стандартные иконки -->
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
@@ -80,7 +80,7 @@
         <div class="place__plates">
             <div class="place__plate">
                 <a class="place__icon" href="https://waze.com/ul/hsvbb646ge">
-                    <img src="./images/waze-icon.svg" alt="">
+                    <img src="./images/gmap-icon.svg" alt="">
                 </a>
                 <div class="place__name">Google Maps</div>
             </div>
@@ -120,6 +120,9 @@
         <div class="worksheet__text">Please answer a&#160;few questions<br> to&#160;help us&#160;prepare:</div>
         <form class="worksheet__form form form_en" action="./">
             <div class="form__come requied">Are you able to&#160;join us?</div>
+            <label class="form__row form__row_getname">
+                <input type="text" name="name" data-rules="omit">
+            </label>
             <label class="form__row form__row_willcome">
                 <input class="form__check" type="radio" name="come" value="да, приду">
                 <span>Yes, I&#160;can</span>
@@ -128,7 +131,7 @@
                 <span>How many of&#160;you?</span>
                 <div class="form__counter">
                     <button></button>
-                    <input type="text" value="0" name="count" readonly disabled>
+                    <input type="text" value="0" name="count" data-rules="num, max:2" readonly disabled>
                     <button></button>
                 </div>
             </div>
@@ -138,7 +141,7 @@
             </label>
             <div class="form__message">
                 <span class="requied">Your full name + names of&#160;your partner and family members</span>
-                <textarea class="form__textarea"></textarea>
+                <textarea class="form__textarea" name="message" data-rules="min:10, max:200"></textarea>
             </div>
             <button class="form__submit"><span>send</span></button>
         </form>
@@ -150,6 +153,6 @@
 
 <!-- <footer class="footer"></footer> -->
 
-<script src="common.js?v=1746869773860"></script>
+<script src="common.js?v=1746872693434"></script>
 </body>
 </html>

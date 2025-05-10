@@ -85,6 +85,9 @@
 		<div class="worksheet__text">אנא ענו על כמה שאלות כדי לעזור לנו בהכנות:</div>
 		<form class="worksheet__form form form_he" action="./">
 			<div class="form__come requied">האם תוכל/י להצטרף אלינו?</div>
+			<label class="form__row form__row_getname">
+				<input type="text" name="name" data-rules="omit">
+			</label>
 			<label class="form__row form__row_willcome">
 				<input class="form__check" type="radio" name="come" value="да, приду">
 				<span>כן, אני יכול/ה</span>
@@ -93,7 +96,7 @@
 				<span>כמה אתם?</span>
 				<div class="form__counter">
 					<button></button>
-					<input type="text" value="0" name="count" readonly disabled>
+					<input type="text" value="0" name="count" data-rules="num, max:2" readonly disabled>
 					<button></button>
 				</div>
 			</div>
@@ -104,7 +107,7 @@
 			<div class="form__message">
 				<span class="requied">שמות מלאים של המוזמנים + שמות בני/בנות זוגם 
 					ובני משפחתם</span>
-				<textarea class="form__textarea"></textarea>
+				<textarea class="form__textarea" name="message" data-rules="min:10, max:200"></textarea>
 			</div>
 			<button class="form__submit"><span>שליחה</span></button>
 		</form>
