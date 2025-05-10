@@ -57,6 +57,11 @@ form?.addEventListener('submit', async e => {
 	const inputsValid = inputValidate();
 
 	if (checksValid && inputsValid) {
+		const button = form.querySelector('button.form__submit');
+
+		form.classList.add('loading');
+		button.disabled = true;
+
 		try {
 			const response = await fetch(scriptURL, {
 				method: 'POST',
@@ -66,6 +71,8 @@ form?.addEventListener('submit', async e => {
 			
 			if (result.result === 'success') {
 				form.reset();
+				button.disabled = false;
+				form.classList.remove('loading');
 				window.location.href = `/thanks.html?lang=${document.documentElement.lang || 'ru'}`;
 			} else {
 				console.warn('Submission error');
@@ -73,6 +80,10 @@ form?.addEventListener('submit', async e => {
 			
 		} catch (err) {
 			console.error('Network error:', err);
+
+		} finally {
+			// form.classList.remove('loading');
+			// button.disabled = false;
 		}
 	}
 });

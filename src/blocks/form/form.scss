@@ -27,6 +27,21 @@
 		}
 	}
 
+
+	&.loading {
+		
+		#{$self}__submit {
+			span {
+				display: none;
+			}
+	
+			img {
+				display: block;
+			}
+		}
+	}
+
+
 	&__come {
 		font-size: 30px;
 		margin-bottom: 10px;
@@ -255,7 +270,9 @@
 
 	&__submit {
 		@extend %reset-button;
-		display: block;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		height: 54px;
 		width: 100%;
 		margin: 0 auto;
@@ -294,6 +311,10 @@
 				border-box;
 			-webkit-text-fill-color: transparent;
 			-webkit-background-clip: text;
+		}
+
+		img {
+			display: none;
 		}
 	}
 }
