@@ -73,7 +73,7 @@ form?.addEventListener('submit', async e => {
 				form.reset();
 				button.disabled = false;
 				form.classList.remove('loading');
-				window.location.href = `/thanks.html?lang=${document.documentElement.lang || 'ru'}`;
+				window.location.href = `./thanks.html?lang=${document.documentElement.lang || 'ru'}`;
 			} else {
 				console.warn('Submission error');
 			}
