@@ -7,7 +7,7 @@ import "./blocks.js";
 // авторесайз формы, по мере заполнения
 textareaResize(document.querySelector('.form__textarea'));
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbw5SlKdS47RA01O3b3EX_YiLaCYJ61mrxGrYFLttz5dvFi-mMUdCJSju4MZz8g4PbwXbg/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyKBukTQc_GRb0ggZIGUoyY5zAofrz7IgKKmfzmwzdJl_38jYhuDLP6EjRP__UwQ0l4/exec';
 
 const form = document.querySelector('form.form');
 const counter = form?.querySelector('.form__counter input');
