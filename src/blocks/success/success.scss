@@ -67,12 +67,28 @@
 		margin: 0 auto;
 		max-width: 320px;
 		max-width: calc(100% - 28px);
+		display: none;
 		
 		@include media('<=md') {
 			font-size: 38px;
 			padding: 20px 15px;
 			background-color: rgba(255, 255, 255, 0.45);
 			border-radius: 15px;
+		}
+
+		&_ru {
+
+		}
+
+		&_en {
+
+		}
+
+		&_he {
+			direction: rtl;
+			font-family: "DL", Tahoma, sans-serif;
+			font-weight: 500;
+			font-size: 37px;
 		}
 	
 		span {

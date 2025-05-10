@@ -3,12 +3,11 @@ import "./polyfills.js";
 import "./blocks.js";
 
 /* Тут можно писать код общий для всего проекта и требующий единого пространства имен */
-/* Идентификатор развертывания AKfycby7VvnsVFrfpMcTOEXmnH3jZ4v7hOaaHW-Y4-u2gADdEMquNBw9HVepPtxaMfy1YWR_Sw */
 
 // авторесайз формы, по мере заполнения
 textareaResize(document.querySelector('.form__textarea'));
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyu5XABDIP-yPP_yNgBofZOftFLnHTeIk90YxWLNrCrDdQ6m8i1XcZl32btkooPsURhkg/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbw5SlKdS47RA01O3b3EX_YiLaCYJ61mrxGrYFLttz5dvFi-mMUdCJSju4MZz8g4PbwXbg/exec';
 
 const form = document.querySelector('form.form');
 const counter = form?.querySelector('.form__counter input');
@@ -58,18 +57,68 @@ form?.addEventListener('submit', async e => {
 	const inputsValid = inputValidate();
 
 	if (checksValid && inputsValid) {
-		const data = Object.fromEntries(new FormData(form));
-
 		try {
 			const response = await fetch(scriptURL, {
 				method: 'POST',
-				body: JSON.stringify(data),
-				headers: { 'Content-Type': 'application/json' },
+				body: new FormData(form),
 			});
 			const result = await response.json();
-			result.result === 'success' ? form.reset() : console.warn('Submission error');
+			
+			if (result.result === 'success') {
+				form.reset();
+				window.location.href = `/thanks.html?lang=${document.documentElement.lang || 'ru'}`;
+			} else {
+				console.warn('Submission error');
+			}
+			
 		} catch (err) {
 			console.error('Network error:', err);
 		}
 	}
 });
+
+
+// Скрипт в Google Apps Script
+
+/* const sheetName = 'guests'; // это не сама таблица, а лист в таблице!
+const scriptProp = PropertiesService.getScriptProperties();
+
+function intialSetup() {
+	const activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+	scriptProp.setProperty('key', activeSpreadsheet.getId());
+
+	// Logger.log(activeSpreadsheet);
+}
+
+function doPost(e) {
+	var lock = LockService.getScriptLock();
+	lock.tryLock(10000);
+
+	try {
+		const doc = SpreadsheetApp.openById(scriptProp.getProperty('key'));
+		const sheet = doc.getSheetByName(sheetName);
+
+		const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+		const nextRow = sheet.getLastRow() + 1;
+
+		const newRow = headers.map(function (header) {
+			return header === 'timestamp' ? new Date() : e.parameter[header];
+		});
+
+		sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow]);
+
+		return ContentService
+			.createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow }))
+			.setMimeType(ContentService.MimeType.JSON);
+	}
+
+	catch (e) {
+		return ContentService
+			.createTextOutput(JSON.stringify({ 'result': 'error', 'error': e }))
+			.setMimeType(ContentService.MimeType.JSON);
+	}
+
+	finally {
+		lock.releaseLock();
+	}
+} */
