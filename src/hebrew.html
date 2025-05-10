@@ -5,41 +5,43 @@
 	<a class="main__down" href="#worksheet"><img src="./images/down-icon.svg" alt=""></a>
 	<div class="main__lang lang">
 		<div class="lang__inner">
+			<a class="lang__item" href="./index.html">
+				<img src="./images/flag-ru.webp" alt="">
+			</a>
 			<a class="lang__item" href="./english.html">
 				<img src="./images/flag-us.webp" alt="">
 			</a>
-			<a class="lang__item" href="./hebrew.html">
-				<img src="./images/flag-he.webp" alt="">
-			</a>
 			<span class="lang__item">
-				<img src="./images/flag-ru.webp" alt="">
+				<img src="./images/flag-he.webp" alt="">
 			</span>
 		</div>
 	</div>
-	<div class="main__top top">
+	<div class="main__top top top_he">
 		<div class="top__image">
-			<img src="./images/title-image-ru.webp" alt="">
+			<img src="./images/title-image-he.webp" alt="">
 		</div>
 		<div class="top__date">
-			<span>Среда</span>
+			<span>יום רביעי</span>
 			<div class="top__day">
 				<img src="./images/day-icon.svg" alt="">
 			</div>
-			<span>Августа</span>
+			<span>אוגוסט</span>
 		</div>
 	</div>
-	<div class="main__alcove alcove">
+	<div class="main__alcove alcove alcove_he">
 		<div class="alcove__image">
 			<img src="./images/alcove-image.webp" alt="">
 		</div>
 		<div class="alcove__body">
-			<h1 class="alcove__title title">Дорогие друзья<br> и родные!</h1>
-			<div class="alcove__text">Приглашаем вас на торжественный вечер, посвященный нашему бракосочетанию. Будем рады видеть вас в среду 20.08.2025</div>
+			<h1 class="alcove__title title title_he">משפחה <br> וחברים יקרים</h1>
+			<div class="alcove__text">שמחים להזמינכם לערב מיוחד בו נחגוג את אהבתנו ואת נישואינו.
+				תהיה לנו זכות גדולה אם תצטרפו אלינו ביום רביעי 20 באוגוסט 2025.</div>
 		</div>
 	</div>
-	<div class="main__place place">
-		<h2 class="place__title title">Место<br> проведения</h2>
-		<div class="place__text">Зал торжеств WIN<br> HaTelem Street 1, Emek Hefer</div>
+	<div class="main__place place place_he">
+		<h2 class="place__title title title_he">מקום האירוע</h2>
+		<div class="place__text">WIN אולם האירועים
+			<br>התלם 1, פארק תעשייה, עמק חפר</div>
 		<div class="place__plates">
 			<div class="place__plate">
 				<a class="place__icon" href="https://maps.app.goo.gl/KDAQSMTJBEwho7NE9">
@@ -55,8 +57,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="main__plane plane">
-		<h2 class="plane__title title">План дня</h2>
+	<div class="main__plane plane" dir="rtl">
+		<h2 class="plane__title title title_he">תוכנית</h2>
 		<div class="plane__plates">
 			<div class="plane__plate">
 				<div class="plane__image">
@@ -64,7 +66,7 @@
 				</div>
 				<div class="plane__text">
 					<span>19:00</span>
-					<span>Кабалат Паним</span>
+					<span>קבלת פנים</span>
 				</div>
 			</div>
 			<div class="plane__plate">
@@ -73,40 +75,38 @@
 				</div>
 				<div class="plane__text">
 					<span>20:00</span>
-					<span>Хупа</span>
+					<span>חופה</span>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="main__worksheet worksheet" id="worksheet">
-		<h2 class="worksheet__title title">Анкета</h2>
-		<div class="worksheet__text">Ответьте, пожалуйста, на пару вопросов, которые помогут нам в организации свадьбы</div>
-		<form class="worksheet__form form" action="./">
-			<div class="form__come requied">Планируете ли вы присутствовать?</div>
-			<label class="form__row form__row_getname">
-				<input type="text" name="name" data-rules="omit">
-			</label>
+	<div class="main__worksheet worksheet worksheet_he" id="worksheet" dir="rtl">
+		<h2 class="worksheet__title title title_he">אישור הגעת אורחים</h2>
+		<div class="worksheet__text">אנא ענו על כמה שאלות כדי לעזור לנו בהכנות:</div>
+		<form class="worksheet__form form form_he" action="./">
+			<div class="form__come requied">האם תוכל/י להצטרף אלינו?</div>
 			<label class="form__row form__row_willcome">
 				<input class="form__check" type="radio" name="come" value="да, приду">
-				<span>Да, буду</span>
+				<span>כן, אני יכול/ה</span>
 			</label>
 			<div class="form__row form__row_howmuch">
-				<span>Сколько Вас?</span>
+				<span>כמה אתם?</span>
 				<div class="form__counter">
 					<button></button>
-					<input type="text" value="0" name="count" data-rules="num, max:2" readonly disabled>
+					<input type="text" value="0" name="count" readonly disabled>
 					<button></button>
 				</div>
 			</div>
 			<label class="form__row form__row_sorry">
 				<input class="form__check" type="radio" name="come" value="к сожалению, не смогу">
-				<span>К сожалению, не смогу</span>
+				<span>לצערי, לא אוכל/ה</span>
 			</label>
 			<div class="form__message">
-				<span class="requied">Ваше имя и фамилия + Вашей пары и Членов семьи</span>
-				<textarea class="form__textarea" name="message" data-rules="min:10, max:200"></textarea>
+				<span class="requied">שמות מלאים של המוזמנים + שמות בני/בנות זוגם 
+					ובני משפחתם</span>
+				<textarea class="form__textarea"></textarea>
 			</div>
-			<button class="form__submit"><span>Отправить</span></button>
+			<button class="form__submit"><span>שליחה</span></button>
 		</form>
 	</div>
 	<a class="main__developer developer" href="https://wwdiv.com/" target="_blank">

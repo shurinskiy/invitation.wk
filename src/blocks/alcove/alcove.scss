@@ -2,6 +2,12 @@
 
 .alcove {
 	$self: &;
+	
+	&_he {
+		#{$self}__text {
+			font-family: "DL", Tahoma, sans-serif;
+		}
+	}
 
 	&__image {
 

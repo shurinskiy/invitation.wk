@@ -3,6 +3,12 @@
 .worksheet {
 	$self: &;
 	padding-top: 20px;
+	
+	&_he {
+		#{$self}__text {
+			font-family: "DL", Tahoma, sans-serif;
+		}
+	}
 
 	&__title {
 

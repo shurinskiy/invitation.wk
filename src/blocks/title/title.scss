@@ -5,9 +5,14 @@
 	font-family: "GV", sans-serif;
 	font-size: 60px;
 	text-align: center;
-	padding-top: 3px;
-	line-height: 1.0;
-	background: linear-gradient(117deg, #263901 0%, #1E5501 100%);
+	padding-top: 5px;
+	line-height: 1.12;
+	background: linear-gradient(150deg, #263901 0%, #2f7509 100%);
 	-webkit-text-fill-color: transparent;
 	-webkit-background-clip: text;
+
+	&_he {
+		font-family: "DR", Tahoma, sans-serif;
+		font-size: 48px;
+	}
 }

@@ -4,6 +4,18 @@
 	$self: &;
 	padding-top: 80px;
 
+	&_en {
+		#{$self}__date {
+			font-size: 32px;
+		}
+	}
+
+	&_he {
+		#{$self}__date {
+			font-size: 32px;
+		}
+	}
+
 	&__image {
 		max-width: calc(100% - 50px);
 		margin: 0 auto 18px;
@@ -78,7 +90,7 @@
 
 		img {
 			display: block;
-			width: calc(100% - 28px);
+			width: 65%;
 		}
 	}
 }

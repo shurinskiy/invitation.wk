@@ -3,6 +3,12 @@
 .plane {
 	$self: &;
 
+	&_en {
+		#{$self}__title {
+			margin-bottom: 10px;
+		}
+	}
+
 	&__title {
 		margin-bottom: 18px;
 	}
@@ -17,21 +23,11 @@
 			display: block;
 			content: '';
 			position: absolute;
-			top: calc(50% + 30px);
+			top: 0;
 			left: 0;
-			height: 2px;
 			width: 100%;
-			background: linear-gradient(0deg,
-				rgba(215, 170, 45, 1) 0%,
-				rgba(215, 170, 45, 1) 21%,
-				rgb(219, 199, 64) 39%,
-				rgb(218, 212, 55) 48%,
-				rgb(216, 200, 55) 50%,
-				rgba(215, 170, 45, 1) 62%,
-				rgba(195, 151, 41, 1) 71%,
-				rgba(145, 103, 32, 1) 91%, 
-				rgba(118, 78, 27, 1) 100%) 
-			border-box;
+			aspect-ratio: 2.35;
+			border-bottom: 2px solid #d3ac6b;
 		}
 	}
 
@@ -40,6 +36,7 @@
 		flex-flow: column nowrap;
 		align-items: center;
 		gap: 10px;
+		width: 40%;
 
 		&::before {
 			display: block;
